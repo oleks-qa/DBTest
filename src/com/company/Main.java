@@ -10,9 +10,9 @@ public class Main {
             e.printStackTrace();
         }
         try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlserver://127.0.0.1;user=sa;password=123123ok");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:test.db");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from [automation].[dbo].[names]");
+            ResultSet resultSet = statement.executeQuery("select * from names");
             while (resultSet.next()) {
                 System.out.println(resultSet.getString(1) + " " + resultSet.getString(2));
             }
